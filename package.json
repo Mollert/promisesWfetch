@@ -1,0 +1,20 @@
+{
+  "name": "promiseswfetch",
+  "version": "1.0.0",
+  "description": "An informative website about useing Promises.all with fetch.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": "12.16.2"
+  },
+  "author": "David Mollert",
+  "license": "ISC",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.3",
+    "express": "^4.17.1",
+    "node-fetch": "^2.6.0"
+  }
+}

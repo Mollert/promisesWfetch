@@ -1,0 +1,66 @@
+
+@font-face { src: url("./assets/LiberationSansR.ttf"); font-family: libR; }
+@font-face { src: url("./assets/LiberationSansB.ttf"); font-family: libB; }
+@font-face { src: url("./assets/OregonLDOBoldOblique.ttf"); font-family: OBO; }
+
+html, body {
+	margin: 0;
+	padding: 0;
+}
+
+#mainBin {
+	font-family: libR;
+	font-size: 1.6rem;
+	width: 86vw;
+	height: 230rem;
+	margin-left: 7vw;
+	background-color: aliceblue;
+}
+
+#introduction {
+	font-family: OBO;
+	font-size: 2rem;
+	padding: 4rem 0;
+	text-align: center;
+}
+
+#twoLine {
+	font-size: 2.6rem;
+	padding-top: 1.2rem;
+}
+
+#threeLine {
+	font-size: 1.6rem;
+	padding-top: 0.6rem;
+}
+
+#fourLine {
+	padding-top: 1.2rem;
+}
+
+#container {
+	margin: 0 4rem;
+	line-height: 1.6;	
+}
+
+.eachStage {
+ margin: 3rem 0;
+}
+
+.stageInfo {
+	margin-bottom: 1rem;
+}
+
+#switchImg {
+	float: left;
+	margin-right: 1rem;	
+}
+
+#variableImg {
+	float: left;
+}
+
+#clearFloat {
+	clear: both;
+	padding-top: 3rem;
+}
