@@ -6,9 +6,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
 
-	<title>Promise.all with Fetch and Cheerio in Node.js</title>
+	<title>Promise.all with Fetch and Cheerio in Node.js.</title>
 	
-	<meta name="description" content="Describe website for search engines.">
+	<meta name="description" content="Showing the syntax for resolving multiple Fetch commands all rolled into an array of Promises by using Promise.all to resolve them and write to the website">
 	
 	<link rel="shortcut icon" href="./assets/faviconP.ico" type="image/x-icon">
 	<link rel="stylesheet" type="text/css" href="./indexCSS.css">
@@ -26,15 +26,15 @@
 
 		<div id="container">
 			<div>
-				I was searching the internet for help with a project which used these two methods along with the npm module.  The issues I was having had to do with dealing with multiple Promises.  The closest I came to my situation was a <a href="https://www.youtube.com/watch?v=OgYkS5cTqQQ&t=16s" target="_blank">youtube video</a> made by Alex Jacobs where he showed a concept which I adapted to fit my project.  The main idea I show below is to pack each promise/fetch into an array before they are resolved.  At some time later you can run the Promise.all method and resolve them.  This concept solved my issues I was having with node routing as you will see.
+				I was searching the internet for help with a project which used these two methods along with the npm module.  The issue I was having had to do with dealing with multiple Promises.  The closest I came to my situation was a <a href="https://www.youtube.com/watch?v=OgYkS5cTqQQ&t=16s" target="_blank">youtube video</a> made by Alex Jacobs where he showed a concept which I adapted to fit my project.  The main idea I show below is to pack each promise/fetch into an array before they are resolved.  At some time later you can run the Promise.all method and resolve them.  This concept solved my issues I was having with node routing as you will see.
 			</div>
 			<div>
-				I will be using my <a href="http://www.dmollert.com" target="_blank">website</a> to scrap some of the suggetions listed there.
+				I will be using my <a href="http://www.dmollert.com" target="_blank">website</a> to scrape some of the suggestions listed there.
 			</div>
 
 			<div class="eachStage">
-				<div class="stageInfo">Let's start with a basic node server.  I added the three modules, express, node-fetch and Cheerio for my needs.</div>
-				<img id="serverImg" src="./image/serverData.png" alt="The Server"/>
+				<div class="stageInfo">Let's start with a basic Node server.  I added the three modules: express, node-fetch and cheerio for my needs.</div>
+				<img id="serverImg" class="fitImg" src="./image/serverData.png" alt="The Server"/>
 			</div>
 
 			<div class="eachStage">
@@ -44,27 +44,27 @@
 			</div>
 
 			<div id="clearFloat" class="eachStage">
-				<div class="stageInfo">With this createPromises function you pass in an array of items, which in my case are the suggestion numbers (0 and 3).  For each suggestion (suggest) it creates a Promise and fetchs the HTML to scrape.  The response is then returned in a text format.  The reply recieves the response and sends it to Cheerio for scraping.  I add the numbered sentence (suggest) and resolve the fetch.  Each Promise is pushed into the allPs array, and the array is returned.</div>
-				<img id="promiseImg" src="./image/createPromises.png" alt="The Promises"/>
+				<div class="stageInfo">With this createPromises function you pass in an array of items (see below).  For each suggestion (suggest) it creates a Promise and fetches the HTML to scrape.  The response is then returned in a text format.  The reply receives that response and sends it to Cheerio along with a number representing the sentence (suggest) to scrape and resolves the fetch.  Each Promise is pushed into the allPs array which is returned when done.</div>
+				<img id="promiseImg" class="fitImg" src="./image/createPromises.png" alt="The Promises"/>
 			</div>
 
 			<div class="eachStage">
-				<div class="stageInfo">Here is what is returned from the createPromises function.  An array of two Promises that are pending.</div>
-				<img id="pendingImg" src="./image/pending.png" alt="Pending"/>
+				<div class="stageInfo">This array is what is returned from the createPromises function: an array of two Promises that are pending.</div>
+				<img id="pendingImg" class="fitImg" src="./image/pending.png" alt="Pending"/>
 			</div>
 
 			<div class="eachStage">
-				<div class="stageInfo">Finally where it begins.  I substituted whichSuggetions for the req.body which comes from the GET route.  Then the variables whichOne1 and whichOne2 are created with the switch function.  At the bottom of the image, the array whichSuggestions is sent to the fuction createPromises shown above.  The array of pending promises that is returned is sent to the letsResolve function which handles all the Promises with Promise.all.  Then result is returned which consists of each sentence in a "result" array.  Last step is some Node Express syntax to send both sentences to the website.</div>
-				<img id="routeImg" src="./image/route.png" alt="The Route"/>
+				<div class="stageInfo">Now starting at the route, I substituted whichSuggestions for the req.body which comes from the GET route.  Then the variables whichOne1 and whichOne2 are created with the switch function.  At the bottom of the image, the array whichSuggestions is sent to the function createPromises (shown above).  The array of pending promises that is returned is sent to the letsResolve function which handles all the promises at once with Promise.all.  Then result is returned which consists of each sentence in a "result" array.  Last step is some Node Express syntax to send both sentences to the website.</div>
+				<img id="routeImg" class="fitImg" src="./image/route.png" alt="The Route"/>
 			</div>
 
 			<div class="eachStage">
 				<div class="stageInfo">And here is what you end up with.</div>
-				<img id="websiteImg" src="./image/website.png" alt="The website"/>
+				<img id="websiteImg" class="fitImg" src="./image/website.png" alt="The website"/>
 			</div>
 
 			<div class="eachStage">
-				<div class="stageInfo">This works very nicely except you give up the .catch error handling in fetch and promises.  When I tried to simulate an error I got an array with '' elements.</div>
+				<div class="stageInfo">This works very nicely except you give up the .catch error handling in fetch and promises.  When I tried to simulate an error I got an array of ' ' elements.</div>
 			</div>
 		</div>
 	</div>

@@ -10,9 +10,9 @@ html, body {
 
 #mainBin {
 	font-family: libR;
-	font-size: 1.6rem;
+	font-size: 1.5rem;
 	width: 86vw;
-	height: 230rem;
+	height: 240rem;
 	margin-left: 7vw;
 	background-color: aliceblue;
 }
@@ -30,7 +30,7 @@ html, body {
 }
 
 #threeLine {
-	font-size: 1.6rem;
+	font-size: 1.5rem;
 	padding-top: 0.6rem;
 }
 
@@ -40,7 +40,7 @@ html, body {
 
 #container {
 	margin: 0 4rem;
-	line-height: 1.6;	
+	line-height: 1.7;
 }
 
 .eachStage {
@@ -51,9 +51,14 @@ html, body {
 	margin-bottom: 1rem;
 }
 
+.fitImg {
+	max-width: 100%;
+	height: auto;
+}
+
 #switchImg {
 	float: left;
-	margin-right: 1rem;	
+	margin-right: 1rem;
 }
 
 #variableImg {
@@ -63,4 +68,10 @@ html, body {
 #clearFloat {
 	clear: both;
 	padding-top: 3rem;
+}
+
+@media screen and (max-width: 890px) {
+	#variableImg {
+		margin-top: 1rem;
+	}
 }
