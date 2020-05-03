@@ -12,7 +12,7 @@ html, body {
 	font-family: libR;
 	font-size: 1.5rem;
 	width: 86vw;
-	height: 240rem;
+	height: auto;
 	margin-left: 7vw;
 	background-color: aliceblue;
 }
@@ -68,6 +68,12 @@ html, body {
 #clearFloat {
 	clear: both;
 	padding-top: 3rem;
+}
+
+#bottomLine {
+	width: 86vw;
+	margin: 0 0 4rem 0;
+	border-bottom: 0.4rem solid lightblue;
 }
 
 @media screen and (max-width: 890px) {
