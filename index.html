@@ -26,10 +26,10 @@
 
 		<div id="container">
 			<div>
-				I was searching the internet for help with a project which used these two methods along with the npm module.  The issue I was having had to do with dealing with multiple Promises.  The closest I came to my situation was a <a href="https://www.youtube.com/watch?v=OgYkS5cTqQQ&t=16s" target="_blank">youtube video</a> made by Alex Jacobs where he showed a concept which I adapted to fit my project.  The main idea I show below is to pack each promise/fetch into an array before they are resolved.  At some time later you can run the Promise.all method and resolve them.  This concept solved the issues I was having with node routing as you will see.
+				I was searching the Internet for help with a project which used these two methods along with the npm module.  The issue I was having had to do with dealing with multiple Promises.  The closest I came to my situation was a <a href="https://www.youtube.com/watch?v=OgYkS5cTqQQ&t=16s" target="_blank">youtube video</a> made by Alex Jacobs where he showed a concept which I adapted to fit my project.  The main idea I show below is to pack each promise/fetch into an array before they are resolved.  At some time later you can run the Promise.all method and resolve them.  This concept solved the issues I was having with Node routing as you will see.
 			</div>
 			<div>
-				I will be using my <a href="http://www.dmollert.com" target="_blank">website</a> to scrape some of the suggestions listed there.
+				I will be using my <a href="http://www.dmollert.com" target="_blank">website</a> to scrape some of the suggestions I list.
 			</div>
 
 			<div class="eachStage">
@@ -44,17 +44,17 @@
 			</div>
 
 			<div id="clearFloat" class="eachStage">
-				<div class="stageInfo">With this createPromises function you pass in an array of items (see below).  For each suggestion (suggest) it creates a Promise and fetches the HTML to scrape.  The response is then returned in a text format.  The reply receives that response and sends it to Cheerio along with a number representing the sentence (suggest) to scrape and resolves the fetch.  Each Promise is pushed into the allPs array which is returned when done.</div>
+				<div class="stageInfo">With this createPromises function you pass in an array of items (see below).  For each number which represents a suggestion (suggest) it creates a Promise and fetches the HTML to scrape.  The response is then returned in a text format.  Next the reply receives that response and sends it to Cheerio along with the sentence number (suggest) to scrape. That is then resolved.  Each Promise is pushed into the allPs array which is returned to the function caller when done.</div>
 				<img class="fitImg" src="./image/createPromises.png" alt="The Promises"/>
 			</div>
 
 			<div class="eachStage">
-				<div class="stageInfo">This array is what is returned from the createPromises function: an array of two Promises that are pending.</div>
+				<div class="stageInfo">This image shows the allPs array that is returned from the createPromises function: an array of two Promises that are pending.</div>
 				<img class="fitImg" src="./image/pending.png" alt="Pending"/>
 			</div>
 
 			<div class="eachStage">
-				<div class="stageInfo">Now starting at the route, I substituted whichSuggestions for the req.body which comes from the GET route.  Then the variables whichOne1 and whichOne2 are created with the switch function.  At the bottom of the image, the array whichSuggestions is sent to the function createPromises (shown above).  The array of pending promises that is returned is sent to the letsResolve function which handles all the promises at once with Promise.all.  Then result is returned which consists of each sentence in a "result" array.  Last step is some Node Express syntax to send both sentences to the website.</div>
+				<div class="stageInfo">Now starting at the route, I substituted whichSuggestions for the req.body which comes in from the GET route.  This array contains the numbers representing the sentence I want scraped.  The variables whichOne1 and whichOne2 are created with the switch function.  At the bottom of the image, the array whichSuggestions is sent to the function createPromises (shown above).  The array of pending promises that is returned is then sent to the letsResolve function which handles all the promises at once with Promise.all.  The result returns an array consisting of each sentence.  Last step is some Node Express syntax to send both sentences to the website.</div>
 				<img class="fitImg" src="./image/route.png" alt="The Route"/>
 			</div>
 
@@ -64,7 +64,7 @@
 			</div>
 
 			<div class="eachStage">
-				<div class="stageInfo">This works very nicely except you give up the .catch error handling in fetch and promises.  When I tried to simulate an error I got an array of ' ' elements.</div>
+				<div class="stageInfo">This concept allows you to move the createPromises function to another file.  Using Node module.exports and require you can service multiple letsResolve functions if need be.  One drawback I found is you give up the .catch error handling in fetch and promises.  When I tried to simulate an error I got an array of ' ' elements.</div>
 			</div>
 		</div>	
 	</div>
