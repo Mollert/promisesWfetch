@@ -68,6 +68,10 @@
 			<div class="eachStage">
 				<div class="stageInfo">This concept allows you to move the createPromises function to another file.  Using Node module.exports and require you can service multiple letsResolve functions if need be.  One drawback I found is you give up the .catch error handling in fetch and promises.  When I tried to simulate an error I got an array of ' ' elements.</div>
 			</div>
+
+			<div class="eachStage">
+				<div class="stageInfo">An added note: in the function createPromises, I've tried to "resolve" the promise with and array or an object.  What happened was the result (from the letsResolve fuction) returned multiple copies of the last promise.  So it looks as if only a string can be passed in the resolve method.  I solved my problem of passing multiple scraped items from the page by concatenating the items together in a string seperated by commas.  Once resulted, I seperated the string.</div>
+			</div>				
 		</div>	
 	</div>
 
