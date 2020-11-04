@@ -1,0 +1,22 @@
+{
+  "short_name": "Promises-Fetch",
+  "name": "Promises, Fetch & Cheerio",
+  "description": "Promise.all with Fetch and Cheerio in Node.js.",
+  "icons": [
+    {
+      "src": "./assets/favImg/android-chrome-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "./assets/favImg/android-chrome-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "https://promises-fetch.com",
+  "background_color": "#FFFFFF",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#F0F8FF"
+}

@@ -1,6 +1,6 @@
 
-@font-face { src: url("./assets/LiberationSansR.ttf"); font-family: libR; }
 @font-face { src: url("./assets/OregonLDOBoldOblique.ttf"); font-family: OBO; }
+@font-face { src: url("./assets/LiberationSansR.ttf"); font-family: libR; }
 
 html, body {
 	margin: 0;

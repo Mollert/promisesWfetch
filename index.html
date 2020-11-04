@@ -5,20 +5,26 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-	<meta name="theme-color" content="#F0F8FF"/>
 
 	<title>Promise.all with Fetch and Cheerio in Node.js.</title>
 	
 	<meta name="description" content="Showing the syntax for resolving multiple Fetch commands all rolled into an array of Promises by using Promise.all to resolve them and write to the website">
-	
-	<link rel="shortcut icon" href="./assets/faviconP.ico" type="image/x-icon">
-	<link rel="apple-touch-icon" sizes="180x180" href="./assets/appleP.png">
+
+	<link rel="icon" href="./assets/favImg/favicon.ico" type="image/x-icon">
+
+	<link rel="apple-touch-icon" sizes="180x180" href="./assets/favImg/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="./assets/favImg/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="./assets/favImg/favicon-16x16.png">
+
+	<link rel="manifest" href="./manifest.webmanifest">
+
+	<link rel="preload" href="./assets/OregonLDOBoldOblique.ttf" as="font" type="font/ttf" crossorigin>
 	<link rel="stylesheet" type="text/css" href="./indexCSS.css">
 
 </head>
 <body>
 
-	<div id="mainBin">
+	<main id="mainBin">
 		<div id="introduction">
 			<div id="oneLine">Here's a combination . . .</div>
 			<div id="twoLine">Promise.all, Fetch and Cheerio</div>
@@ -73,7 +79,7 @@
 				<div class="stageInfo">An added note: in the function createPromises, I've tried to "resolve" the promise with and array or an object.  What happened was the result (from the letsResolve function) returned multiple copies of the last promise.  So it looks as if only a string can be passed in the resolve method.  I solved my problem of passing multiple scraped items from the page by concatenating the items together in a string separated by commas.  Once resulted, I separated the string.</div>
 			</div>				
 		</div>	
-	</div>
+	</main>
 
 </body>
 </html>
